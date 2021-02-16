@@ -1,4 +1,5 @@
 import React from 'react'
+import IconButton from './iconButton'
 import './list.css'
 
 export default props => {
@@ -10,9 +11,9 @@ export default props => {
             <tr key={task._id}>
                 <td className={task.done ? 'done' : ''}>{task.description}</td>
                 <td className="actions">
-                    <button className={`fa fa-check ${task.done ? 'sr-only': ''}`} onClick={() => props.handleMarkAsDone(task)}></button>
-                    <button className={`fa fa-refresh ${!task.done ? 'sr-only' : ''}`} onClick={() => props.handleMarkAsPending(task)}></button>
-                    <button className={`fa fa-close ${!task.done ? 'sr-only' : ''}`} onClick={() => props.handleRemove(task)}></button>
+                    <IconButton icon='check' hide={task.done} onClick={() => props.handleMarkAsDone(task)}/>
+                    <IconButton icon='refresh' hide={!task.done} onClick={() => props.handleMarkAsPending(task)}/>
+                    <IconButton icon='close' hide={!task.done} onClick={() => props.handleRemove(task)}/>
                 </td>
             </tr>
         ))
@@ -27,7 +28,7 @@ export default props => {
                     <thead>
                         <tr>
                             <th>Descrição</th>
-                            <th>Ações</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
