@@ -4,6 +4,7 @@ import './taskManager.css'
 import Menu from '../components/menu'
 import List from '../components/list'
 import Modal from '../components/modal'
+import Footer from '../templates/footer'
 
 import axios from 'axios'
 
@@ -69,6 +70,7 @@ export default props => {
                 description={description}
                 handleChange={handleChangeDescription}
                 addTask={addTask}/>
+            <Footer/>
         </div>
     )
 }

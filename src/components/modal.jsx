@@ -9,7 +9,7 @@ export default props => (
                 <form action="#">
                     <div className="input-group">
                         <label htmlFor="description" className="sr-only">Descrição</label>
-                        <input type="text" value={props.description} onChange={e => props.handleChange(e.target.value)} name="description" placeholder="Descrição" className="input-group" />
+                        <input  autoComplete='off' type="text" value={props.description} onChange={e => props.handleChange(e.target.value)} name="description" placeholder="Descrição" className="input-group" />
                     </div>
 
                     <div className="input-group actions">
